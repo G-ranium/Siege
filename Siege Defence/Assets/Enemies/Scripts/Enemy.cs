@@ -4,19 +4,38 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public ParticleSystem explosionParticle;
+    private MoveCenter moveCenter;
+    private EnemyAttacking enemyAttacking;
 
-    private Rigidbody targetRb;
-
+    public bool attacking;
     // Start is called before the first frame update
     void Start()
     {
-        targetRb = GetComponent<Rigidbody>();
+        EnemyTracker.Instance.RegisterEnemy();
+        moveCenter = GetComponent<MoveCenter>();
+        enemyAttacking = GetComponentInChildren<EnemyAttacking>();
+        attacking = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDestroy()
     {
+        if (EnemyTracker.Instance != null)
+            EnemyTracker.Instance.UnregisterEnemy();
+    }
 
+    public void Update()
+    {
+        if (moveCenter != null && moveCenter.speed == 0 && !attacking)
+        {
+            Debug.Log("Load cannon");
+            enemyAttacking.Attack();
+            attacking = true;
+        }
+
+        if (moveCenter.speed != 0 && attacking)
+        {
+            enemyAttacking.CeaseFire();
+            attacking = false;
+        }
     }
 }
