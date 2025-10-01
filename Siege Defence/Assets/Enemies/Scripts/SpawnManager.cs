@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
+    public IntData numberOfEnemiesToSpawn;
     public float spawnDelay = 2;
     public float spawnInterval = 1;
     public float radius = 15.0f;
@@ -14,19 +15,25 @@ public class SpawnManager : MonoBehaviour
     public enum SpawnDirection { North, East, South, West }
     public SpawnDirection spawnDirection = SpawnDirection.North;
 
-    public int numberOfEnemiesToSpawn = 10;
+    //public int numberOfEnemiesToSpawn = 10;
     private int enemiesSpawned = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         centerPoint = new Vector3(0, 1, 0);
+        //Debug.Log(numberOfEnemiesToSpawn.Value);
+        //numberOfEnemiesToSpawn.SetValue(10);
+        //Debug.Log("Value should be 10! " + numberOfEnemiesToSpawn.Value);
+        RandomizeSpawnDirection();
     }
 
     // Spawn obstacles
     public void SpawnObjects()
     {
-        if (enemiesSpawned >= numberOfEnemiesToSpawn) return;
+        if (enemiesSpawned >= numberOfEnemiesToSpawn.Value) return;
+
+        Debug.Log("Spawning " + numberOfEnemiesToSpawn.Value + " enemies!");
 
         Vector3 spawnLocation = RandomPointInQuadrant();
         int index = Random.Range(0, objectPrefabs.Length);
@@ -37,10 +44,28 @@ public class SpawnManager : MonoBehaviour
 
     public void StartSpawn()
     {
-        if (enemiesSpawned < numberOfEnemiesToSpawn)
+        if (enemiesSpawned < numberOfEnemiesToSpawn.Value)
             InvokeRepeating("SpawnObjects", spawnDelay, spawnInterval);
 
         enemiesSpawned = 0;
+        UpdateNextWave();
+    }
+
+    public void UpdateNextWave()
+    {
+        //enemiesSpawned = 0;
+        Debug.Log("Before change " + numberOfEnemiesToSpawn.Value);
+        double nextWave = numberOfEnemiesToSpawn.Value * 0.2;
+        numberOfEnemiesToSpawn.UpdateValue((int)nextWave);
+        //numberOfEnemiesToSpawn.IncrementValue();
+        Debug.Log("Value should be changed now! " + numberOfEnemiesToSpawn.Value);
+        RandomizeSpawnDirection();
+    }
+
+    void RandomizeSpawnDirection()
+    {
+        int directionIndex = Random.Range(0, 4);
+        spawnDirection = (SpawnDirection)directionIndex;
     }
 
     private Vector3 RandomPointInQuadrant()

@@ -7,8 +7,9 @@ public class MoveCenter : MonoBehaviour
     public float speed;
     public float range;
     private float stopSpeed;
+    //public bool attacking;
     private Vector3 centerPoint;
-    private Vector3 destination;
+    public Vector3 destination;
 
     private Transform targetObject = null;
 
@@ -21,6 +22,7 @@ public class MoveCenter : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         targetObject = null;
+        //attacking = false;
         destination = centerPoint;
         speed = stopSpeed;
     }
@@ -28,8 +30,10 @@ public class MoveCenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EnemyAttacking attackBehavior = GetComponent<EnemyAttacking>();
         centerPoint = new Vector3(0f, 1f, 0f);
         destination = centerPoint;
+        //attacking = false;
 
         transform.LookAt(centerPoint);
         //transform.Rotate(90f, 0f, 0f);
@@ -47,8 +51,11 @@ public class MoveCenter : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
-        if (targetObject != null && Vector3.Distance(transform.position, destination) <= range)
+        if (targetObject != null && Vector3.Distance(transform.position, destination) <= range /*&& !attacking*/)
+        {
             speed = 0;
+            //attacking = true;
+        }
 
         transform.LookAt(destination);
 
