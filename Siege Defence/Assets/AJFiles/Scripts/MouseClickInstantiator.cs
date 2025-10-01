@@ -71,8 +71,10 @@ public class MouseClickInstantiator : MonoBehaviour
         Vector2 mouseScreenPosition = positionAction.ReadValue<Vector2>();
         Ray ray = mainCamera.ScreenPointToRay(mouseScreenPosition);
         RaycastHit hit;
+        
+        int groundLayerMask = LayerMask.GetMask("Ground");
 
-        if (Physics.Raycast(ray, out hit, 100f, interactableLayer))
+        if (Physics.Raycast(ray, out hit, 100f, groundLayerMask))
         {
             GameObject hitObject = hit.collider.gameObject;
 

@@ -17,4 +17,4 @@ MonoBehaviour:
   health: 100
   fireRate: 0.2
   damage: 15
-  range: 30
+  range: 60
