@@ -30,17 +30,35 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _1st_ShadeMap:
+        m_Texture: {fileID: 2800000, guid: 1cfef0fb4bc2d114c9b8e682064cd59f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _2nd_ShadeMap:
+        m_Texture: {fileID: 2800000, guid: f38806227515151429f6a93433cfc869, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 60850f9e260982a4e81a3314d7e4e9ca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: aaf9d6b14547a78489cc51f02dae336d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _HighColor_Power: 0.598
+    - _Is_NormalMapToBase: 0
+    - _Is_NormalMapToHighColor: 1
+    - _Is_NormalMapToRimLight: 1
     - _Outline_Width: 40
     m_Colors:
     - _1st_ShadeColor: {r: 0.3773585, g: 0.2769669, b: 0.1263795, a: 1}
     - _2nd_ShadeColor: {r: 0.26415092, g: 0.19468805, b: 0.113385536, a: 1}
     - _BaseColor: {r: 0.5471698, g: 0.37402838, b: 0.13163047, a: 1}
     - _Color: {r: 0.5471698, g: 0.37402835, b: 0.13163042, a: 1}
-    - _HighColor: {r: 0.6320754, g: 0.40905803, b: 0.21168566, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6048916907118149469
