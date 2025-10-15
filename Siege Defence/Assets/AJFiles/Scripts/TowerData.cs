@@ -7,6 +7,6 @@ public class TowerData : ScriptableObject
     public int level;
     public float health;
     public float fireRate;
-    public float damage;
+    public int damage;
     public float range;
 }
