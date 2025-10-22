@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
 
 public class TowerBehavior : MonoBehaviour
 {
@@ -68,6 +69,15 @@ public class TowerBehavior : MonoBehaviour
 
         // You'd normally call something like enemy.TakeDamage(towerData.damage);
         Debug.Log($"{towerData.towerName} fires at {enemy.name} for {towerData.damage} damage.");
+        IDamageable damageable = enemy.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(towerData.damage);
+        }
+        else
+        {
+            Debug.Log($"{towerData.towerName} doesn't have an IDamageable.");
+        }
     }
 
     private void HandleTargeting()
