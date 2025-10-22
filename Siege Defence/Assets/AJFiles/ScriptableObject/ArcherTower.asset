@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ArcherTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Archer Tower
-  level: 3
-  health: 250
+  level: 1
+  health: 100
   fireRate: 0.2
   damage: 60
-  range: 10
+  range: 5
