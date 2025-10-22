@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b26bc30bfec18654ca57666c10ee476f, type: 3}
-  m_Name: BatteringRam
+  m_Name: Ballista
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
-  towerName: Battering Ram
+  towerName: Ballista
   level: 1
-  health: 200
-  fireRate: 1
-  damage: 40
-  range: 2
+  health: 150
+  fireRate: 0.5
+  damage: 20
+  range: 6
