@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Rendering.Universal;
 
-public class TowerBehavior : MonoBehaviour
+public class TowerBehavior : MonoBehaviour, IDamageable
 {
     [Header("Tower Configuration")]
     public TowerData towerData;
-
+    
+    private HealthBarBehavior towerHealthbar;
     private float currentHealth;
     private float fireCooldown;
 
@@ -39,6 +40,7 @@ public class TowerBehavior : MonoBehaviour
     {
         currentHealth = towerData.health;
         fireCooldown = 0f;
+        towerHealthbar = gameObject.GetComponentInChildren<HealthBarBehavior>();
 
         // Set up range collider
         rangeCollider = GetComponent<SphereCollider>();
@@ -122,9 +124,10 @@ public class TowerBehavior : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        towerHealthbar.UpdateHealthBar(currentHealth, towerData.health);
         if (currentHealth <= 0)
         {
             Die();
