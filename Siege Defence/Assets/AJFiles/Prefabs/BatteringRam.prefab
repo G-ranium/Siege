@@ -102,4 +102,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a216af7862ff4ec46a3fb0e358a3c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerBehavior
-  towerData: {fileID: 11400000, guid: 7ad84a10bf90cba4489c4f8b2178a994, type: 2}
+  towerData: {fileID: 11400000, guid: a98fd770b6b371f498e26e9eef704865, type: 2}

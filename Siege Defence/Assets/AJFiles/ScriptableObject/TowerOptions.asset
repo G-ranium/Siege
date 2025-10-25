@@ -15,4 +15,5 @@ MonoBehaviour:
   prefabOptions:
   - {fileID: 1629565631612372864, guid: 717c4535c035793468fc91d7c9ba313e, type: 3}
   - {fileID: 1290333566355438673, guid: 979d1117a39660144a64c5d560a80bcb, type: 3}
-  selectedPrefabIndex: 1
+  - {fileID: 106452998760085341, guid: 7baf5e18bd878ca4cafd5a5191bcab4d, type: 3}
+  selectedPrefabIndex: 2
