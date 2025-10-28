@@ -2711,8 +2711,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1946733299}
-        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
+      - m_Target: {fileID: 1946733301}
+        m_TargetAssemblyTypeName: SpawnManagerNavMesh, Assembly-CSharp
         m_MethodName: StartSpawn
         m_Mode: 1
         m_Arguments:
@@ -4738,8 +4738,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1946733300}
-  - component: {fileID: 1946733299}
   - component: {fileID: 1946733298}
+  - component: {fileID: 1946733301}
+  - component: {fileID: 1946733302}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -4760,28 +4761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyTracker
   activeEnemies: {fileID: 11400000, guid: 6d00fc32453a21e409efc1fee9e7c4bb, type: 2}
---- !u!114 &1946733299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946733297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d299be3bd9484534593e93c6944a806c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
-  objectPrefabs:
-  - {fileID: 7302625628652999607, guid: a0772d562045f46419c439375025b79e, type: 3}
-  - {fileID: 745712826817855589, guid: 16840fda59525bf44be74050103c375c, type: 3}
-  - {fileID: 4254714588371710004, guid: 27b8a2ea891d1664c9a9527ad8706dd4, type: 3}
-  - {fileID: 3452834039841393973, guid: e0648855addff1744aab21b6641bc34a, type: 3}
-  numberOfEnemiesToSpawn: {fileID: 11400000, guid: 79ac1179d86399d4e91cca7183931bde, type: 2}
-  spawnDelay: 2
-  spawnInterval: 1
-  radius: 15
-  spawnDirection: 0
 --- !u!4 &1946733300
 Transform:
   m_ObjectHideFlags: 0
@@ -4797,6 +4776,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946733301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946733297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2112e3402c701bd4980320e06c3a29d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnManagerNavMesh
+  objectPrefabs:
+  - {fileID: 7302625628652999607, guid: 3e8b90d68e732ca48b8f78c3b8758bd5, type: 3}
+  - {fileID: 745712826817855589, guid: bf89f856285525443a0594a5180dceb8, type: 3}
+  - {fileID: 4254714588371710004, guid: 71a637f3d50e5ce45a2d85153b489ee8, type: 3}
+  - {fileID: 3452834039841393973, guid: c15aa63428a858c4ebd48f362724a5f4, type: 3}
+  numberOfEnemiesToSpawn: {fileID: 11400000, guid: 79ac1179d86399d4e91cca7183931bde, type: 2}
+  spawnDelay: 2
+  spawnInterval: 1
+  radius: 15
+  spawnDirection: 0
+--- !u!114 &1946733302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946733297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222b289fa089e8a4aa7b3e2bba4e348d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuntimeNavMeshBaker
+  targetGameObject: {fileID: 1492039277}
 --- !u!4 &1967551578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5595495239922029759, guid: 855e2a79af93db44691772309a604a39, type: 3}
