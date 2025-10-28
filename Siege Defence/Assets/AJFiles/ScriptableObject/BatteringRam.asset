@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Battering Ram
   level: 1
-  health: 100
-  fireRate: 0.2
-  damage: 15
-  range: 60
+  health: 200
+  fireRate: 1
+  damage: 40
+  range: 2

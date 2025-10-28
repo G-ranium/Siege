@@ -45,6 +45,11 @@ public class MoveCenter : MonoBehaviour
             destination = targetObject.position;
         }
 
+        if (targetObject == null)
+        {
+            destination = centerPoint;
+        }
+
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
         if (targetObject != null && Vector3.Distance(transform.position, destination) <= range)
