@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cb90e856ec3a3469e2872a7cc28390, type: 3}
+  m_Name: TowerOptions
+  m_EditorClassIdentifier: Assembly-CSharp::PrefabListData
+  prefabOptions:
+  - {fileID: 8973711595771580775, guid: 9572dc39565b99841bec863d67a566bb, type: 3}
+  - {fileID: 5900139659418858054, guid: cce7123f0332eac45bb6aa7f4e2955fa, type: 3}
+  - {fileID: 7655691814128407381, guid: a83e01ddb63d34140b0628dcca8db730, type: 3}
+  - {fileID: 8581842198541788732, guid: 8badf7c0f2ff13648a65e0a070258241, type: 3}
+  - {fileID: 8151818094505164469, guid: 9f4b2f1dea5deac4888c7e6e0d935bf8, type: 3}
+  selectedPrefabIndex: 0
