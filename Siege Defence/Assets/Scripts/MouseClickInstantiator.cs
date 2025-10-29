@@ -4,14 +4,13 @@ using UnityEngine.InputSystem;
 public class MouseClickInstantiator : MonoBehaviour
 {
     [Header("Configuration")]
-    public GameObject prefabToInstantiate;
-    public LayerMask interactableLayer;
-    public Material highlightMaterial;
     public PrefabListData prefabList;
+    public LayerMask groundLayer;
+    public Material ghostMaterial; // Material for transparent ghost
 
     private Camera mainCamera;
-    private GameObject currentlyHoveredObject = null;
-    private Material originalMaterial = null;
+    private GameObject prefabToInstantiate;
+    private GameObject ghostInstance;
 
     private bool isMouseHeld = false;
 
@@ -48,13 +47,23 @@ public class MouseClickInstantiator : MonoBehaviour
     {
         if (isMouseHeld)
         {
-            HandleHovering();
+            HandleMouseHover();
         }
     }
 
     private void OnMouseDown()
     {
         isMouseHeld = true;
+
+        // Create the ghost prefab
+        if (prefabToInstantiate != null && ghostInstance == null)
+        {
+            ghostInstance = Instantiate(prefabToInstantiate);
+            SetLayerRecursively(ghostInstance, LayerMask.NameToLayer("Ignore Raycast")); // Prevent ghost from interfering with raycasts
+
+            // Apply ghost material
+            ApplyGhostMaterial(ghostInstance, ghostMaterial);
+        }
     }
 
     private void OnMouseUp()
@@ -66,62 +75,53 @@ public class MouseClickInstantiator : MonoBehaviour
         }
     }
 
-    void HandleHovering()
+    void HandleMouseHover()
     {
         Vector2 mouseScreenPosition = positionAction.ReadValue<Vector2>();
         Ray ray = mainCamera.ScreenPointToRay(mouseScreenPosition);
         RaycastHit hit;
-        
-        int groundLayerMask = LayerMask.GetMask("Ground");
 
-        if (Physics.Raycast(ray, out hit, 100f, groundLayerMask))
+        if (Physics.Raycast(ray, out hit, 100f, groundLayer))
         {
-            GameObject hitObject = hit.collider.gameObject;
-
-            if (hitObject != currentlyHoveredObject)
+            if (ghostInstance != null)
             {
-                ClearHighlight();
-
-                currentlyHoveredObject = hitObject;
-
-                Renderer renderer = currentlyHoveredObject.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    originalMaterial = renderer.material;
-                    renderer.material = highlightMaterial;
-                }
+                ghostInstance.transform.position = hit.point;
             }
-        }
-        else
-        {
-            ClearHighlight();
         }
     }
 
     void HandleRelease()
     {
-        if (currentlyHoveredObject != null)
+        if (ghostInstance != null)
         {
-            Vector3 spawnPosition = currentlyHoveredObject.transform.position + Vector3.up;
-            Instantiate(prefabToInstantiate, spawnPosition, Quaternion.identity);
+            // Instantiate the real prefab at ghost's position
+            Instantiate(prefabToInstantiate, ghostInstance.transform.position, Quaternion.identity);
+            Destroy(ghostInstance);
         }
 
-        ClearHighlight();
         this.enabled = false;
     }
 
-    void ClearHighlight()
+    void ApplyGhostMaterial(GameObject obj, Material ghostMat)
     {
-        if (currentlyHoveredObject != null)
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in renderers)
         {
-            Renderer renderer = currentlyHoveredObject.GetComponent<Renderer>();
-            if (renderer != null && originalMaterial != null)
+            Material[] mats = new Material[rend.materials.Length];
+            for (int i = 0; i < mats.Length; i++)
             {
-                renderer.material = originalMaterial;
+                mats[i] = ghostMat;
             }
+            rend.materials = mats;
         }
+    }
 
-        currentlyHoveredObject = null;
-        originalMaterial = null;
+    void SetLayerRecursively(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
+        }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bbbb16bea1759478a3b3e8c83479f4, type: 3}
   m_Name: Currency
   m_EditorClassIdentifier: Assembly-CSharp::IntData
-  value: 200
+  value: 1000
   minValue: 0
   maxValue: 99999
   valueOutOfRange:

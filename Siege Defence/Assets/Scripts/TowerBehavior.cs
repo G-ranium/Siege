@@ -12,6 +12,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
     private float fireCooldown;
 
     private SphereCollider rangeCollider;
+    private Animator animator;
 
     // Targeting
     private List<GameObject> enemiesInRange = new List<GameObject>();
@@ -48,6 +49,13 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         {
             rangeCollider = gameObject.AddComponent<SphereCollider>();
         }
+        
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator is not assigned on " + gameObject.name);
+        }
+        animator.SetTrigger("Idle");
 
         rangeCollider.isTrigger = true;
         rangeCollider.radius = towerData.range;
@@ -61,7 +69,9 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         if (fireCooldown <= 0f)
         {
             FireAt(currentTarget);
+            animator.SetTrigger("Fire");
             fireCooldown = 1f / towerData.fireRate;
+            animator.SetTrigger("Reload");
         }
     }
 
@@ -91,6 +101,11 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         if (currentTarget == null || !enemiesInRange.Contains(currentTarget))
         {
             currentTarget = enemiesInRange.Count > 0 ? enemiesInRange[0] : null;
+            Vector3 direction = currentTarget.transform.position - transform.position;
+            if (direction != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            }
         }
     }
 
@@ -126,6 +141,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
+        Debug.Log($"{gameObject.name} took {amount} damage from {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         currentHealth -= amount;
         towerHealthbar.UpdateHealthBar(currentHealth, towerData.health);
         if (currentHealth <= 0)
