@@ -29,4 +29,19 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }

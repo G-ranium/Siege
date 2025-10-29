@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: TowerOptions
   m_EditorClassIdentifier: Assembly-CSharp::PrefabListData
   prefabOptions:
-  - {fileID: 1629565631612372864, guid: 717c4535c035793468fc91d7c9ba313e, type: 3}
-  - {fileID: 1290333566355438673, guid: 979d1117a39660144a64c5d560a80bcb, type: 3}
-  - {fileID: 106452998760085341, guid: 7baf5e18bd878ca4cafd5a5191bcab4d, type: 3}
-  selectedPrefabIndex: 2
+  - {fileID: 8973711595771580775, guid: 9572dc39565b99841bec863d67a566bb, type: 3}
+  - {fileID: 5900139659418858054, guid: cce7123f0332eac45bb6aa7f4e2955fa, type: 3}
+  - {fileID: 7655691814128407381, guid: a83e01ddb63d34140b0628dcca8db730, type: 3}
+  - {fileID: 8581842198541788732, guid: 8badf7c0f2ff13648a65e0a070258241, type: 3}
+  - {fileID: 8151818094505164469, guid: 9f4b2f1dea5deac4888c7e6e0d935bf8, type: 3}
+  selectedPrefabIndex: 0

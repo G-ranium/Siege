@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26bc30bfec18654ca57666c10ee476f, type: 3}
   m_Name: Cannon
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
-  towerName: 
-  level: 0
-  health: 0
-  fireRate: 0
-  damage: 0
-  range: 0
+  towerName: Cannon
+  level: 1
+  health: 100
+  fireRate: 0.8
+  damage: 70
+  range: 4
