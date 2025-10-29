@@ -22,7 +22,6 @@ public class MoveCenter : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         targetObject = null;
-        //attacking = false;
         destination = centerPoint;
         speed = stopSpeed;
     }
@@ -33,16 +32,13 @@ public class MoveCenter : MonoBehaviour
         EnemyAttacking attackBehavior = GetComponent<EnemyAttacking>();
         centerPoint = new Vector3(0f, 1f, 0f);
         destination = centerPoint;
-        //attacking = false;
 
         transform.LookAt(centerPoint);
-        //transform.Rotate(90f, 0f, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Vector3 destination = centerPoint;
 
         if (targetObject != null)
         {
@@ -56,10 +52,9 @@ public class MoveCenter : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
-        if (targetObject != null && Vector3.Distance(transform.position, destination) <= range /*&& !attacking*/)
+        if (targetObject != null && Vector3.Distance(transform.position, destination) <= range)
         {
             speed = 0;
-            //attacking = true;
         }
 
         transform.LookAt(destination);
