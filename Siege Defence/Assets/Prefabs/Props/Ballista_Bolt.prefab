@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.584
+      value: 0.00029607417
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.346
+      value: 0.017300006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.301
+      value: 0.004966794
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_LocalRotation.y
@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a7dbd433d37a57544898b6583e2e3594, type: 2}
+      objectReference: {fileID: 2100000, guid: f7e57cbb2c210344fb9cde2bfe92dc5b, type: 2}
     - target: {fileID: 919132149155446097, guid: 2fd2e03cdcdf79e4da16640b499650ce, type: 3}
       propertyPath: m_Name
       value: Ballista_Bolt
