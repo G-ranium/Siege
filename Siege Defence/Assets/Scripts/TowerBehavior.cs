@@ -31,8 +31,6 @@ public class TowerBehavior : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (towerData == null) return;
-
         HandleTargeting();
         HandleFiring();
     }
@@ -63,8 +61,6 @@ public class TowerBehavior : MonoBehaviour, IDamageable
 
     private void HandleFiring()
     {
-        if (currentTarget == null) return;
-
         fireCooldown -= Time.deltaTime;
         if (fireCooldown <= 0f)
         {
@@ -77,10 +73,8 @@ public class TowerBehavior : MonoBehaviour, IDamageable
 
     private void FireAt(GameObject enemy)
     {
-        if (enemy == null) return;
-
+        /*
         // You'd normally call something like enemy.TakeDamage(towerData.damage);
-        Debug.Log($"{towerData.towerName} fires at {enemy.name} for {towerData.damage} damage.");
         IDamageable damageable = enemy.GetComponent<IDamageable>();
         if (damageable != null)
         {
@@ -90,6 +84,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         {
             Debug.Log($"{towerData.towerName} doesn't have an IDamageable.");
         }
+        */
     }
 
     private void HandleTargeting()
@@ -98,14 +93,9 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         enemiesInRange.RemoveAll(enemy => enemy == null);
 
         // If current target is gone or out of range, switch to next
-        if (currentTarget == null || !enemiesInRange.Contains(currentTarget))
+        if (!enemiesInRange.Contains(currentTarget))
         {
             currentTarget = enemiesInRange.Count > 0 ? enemiesInRange[0] : null;
-            Vector3 direction = currentTarget.transform.position - transform.position;
-            if (direction != Vector3.zero)
-            {
-                transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
-            }
         }
     }
 
@@ -141,7 +131,6 @@ public class TowerBehavior : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        Debug.Log($"{gameObject.name} took {amount} damage from {new System.Diagnostics.StackTrace().GetFrame(1).GetMethod().Name}");
         currentHealth -= amount;
         towerHealthbar.UpdateHealthBar(currentHealth, towerData.health);
         if (currentHealth <= 0)
@@ -152,7 +141,6 @@ public class TowerBehavior : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        Debug.Log($"{towerData.towerName} has been destroyed.");
         Destroy(gameObject);
     }
 
