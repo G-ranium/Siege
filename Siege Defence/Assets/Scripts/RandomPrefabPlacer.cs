@@ -16,7 +16,7 @@ public class RandomPrefabPlacer : MonoBehaviour
     // ------------------------------------------------------------------
     [Tooltip("Prefabs that can be chosen from. Must contain at least one entry.")]
     public List<GameObject> prefabs = new List<GameObject>();
-
+    
     [Tooltip("Transforms where a prefab will be instantiated. One prefab per transform.")]
     public List<Transform> spawnPoints = new List<Transform>();
 
