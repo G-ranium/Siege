@@ -8,7 +8,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
     public TowerData towerData;
     
     private HealthBarBehavior towerHealthbar;
-    private float currentHealth;
+    public float currentHealth;
     private float fireCooldown;
 
     private SphereCollider rangeCollider;
@@ -96,6 +96,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         if (!enemiesInRange.Contains(currentTarget))
         {
             currentTarget = enemiesInRange.Count > 0 ? enemiesInRange[0] : null;
+            Debug.Log($"{gameObject.name}: Targeting to {currentTarget}");
         }
     }
 
