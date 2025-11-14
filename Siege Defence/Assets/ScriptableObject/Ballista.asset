@@ -15,6 +15,10 @@ MonoBehaviour:
   towerName: Ballista
   level: 1
   health: 150
+  maxHealth: 150
   fireRate: 0.5
   damage: 20
   range: 6
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
