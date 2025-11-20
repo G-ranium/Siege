@@ -15,6 +15,10 @@ MonoBehaviour:
   towerName: Cannon
   level: 1
   health: 100
+  maxHealth: 100
   fireRate: 0.8
   damage: 70
   range: 4
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
