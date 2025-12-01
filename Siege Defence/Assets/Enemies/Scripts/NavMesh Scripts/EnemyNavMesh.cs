@@ -8,6 +8,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     public bool attacking;
 
+
     void Start()
     {
         EnemyTracker.Instance.RegisterEnemy();

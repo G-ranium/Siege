@@ -3,24 +3,37 @@ using UnityEngine.AI;
 
 public class MoveCenterNavMesh : MonoBehaviour
 {
-    public float range = 1.5f; // Distance to stop
-    public Transform defaultTarget; // Fallback target (e.g., center beacon)
+    public float range = 1.5f;  // Distance to stop
+    public string baseName;
+
+    [Header("Animation")]
+    public Animator anim;
+    public string moveAnim;
+    public string idleAnim;
+
+    public Transform defaultTarget; 
     public Transform currentTarget;
 
     private NavMeshAgent agent;
+    private bool isMoving = false; // so we don't spam triggers
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = range;
 
-        GameObject mainBase = GameObject.Find("MainBase");
+        GameObject mainBase = GameObject.Find(baseName);
         defaultTarget = mainBase.transform;
         currentTarget = defaultTarget;
 
         if (currentTarget != null)
         {
             agent.SetDestination(currentTarget.position);
+            PlayMoveAnim();   // Start moving immediately
+        }
+        else
+        {
+            PlayIdleAnim();
         }
     }
 
@@ -30,21 +43,27 @@ public class MoveCenterNavMesh : MonoBehaviour
         {
             agent.SetDestination(currentTarget.position);
 
+            // Check if close enough to stop
             if (!agent.pathPending && agent.remainingDistance <= range)
             {
                 agent.isStopped = true;
-                // Optional: trigger attack or animation here
+                PlayIdleAnim(); // Stopped moving
+            }
+            else
+            {
+                agent.isStopped = false;
+                PlayMoveAnim(); // Moving
             }
         }
-        else if (currentTarget == null && agent.destination != defaultTarget.position)
+        else 
         {
-            // No target — return to default or self-destruct
+            // No target â†’ try fallback
             if (defaultTarget != null)
             {
                 currentTarget = defaultTarget;
                 agent.isStopped = false;
                 agent.SetDestination(defaultTarget.position);
-                Debug.Log("Moving On");
+                PlayMoveAnim();
             }
             else if (agent.remainingDistance < 0.1f)
             {
@@ -56,6 +75,28 @@ public class MoveCenterNavMesh : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         currentTarget = other.transform;
+        PlayMoveAnim();
         Debug.Log("Found Hostile!");
+    }
+
+    //-------------------------------
+    // ANIMATION CONTROL (clean + reusable)
+    //-------------------------------
+    void PlayMoveAnim()
+    {
+        if (!isMoving)
+        {
+            anim.SetTrigger(moveAnim);
+            isMoving = true;
+        }
+    }
+
+    void PlayIdleAnim()
+    {
+        if (isMoving)
+        {
+            anim.SetTrigger(idleAnim);
+            isMoving = false;
+        }
     }
 }

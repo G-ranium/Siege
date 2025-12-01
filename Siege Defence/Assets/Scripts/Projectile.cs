@@ -23,7 +23,9 @@ public class Projectile : MonoBehaviour
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
         else
+        {
             meshRenderer.enabled = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
