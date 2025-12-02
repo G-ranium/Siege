@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemyNavMesh : MonoBehaviour
 {
     private NavMeshAgent agent;
     private EnemyAttackingNavMesh enemyAttacking;
+
+
+    public UnityEvent onDestroyed;
+    public IntData currency;
+    public int value;
 
     public bool attacking;
 
@@ -21,13 +27,14 @@ public class EnemyNavMesh : MonoBehaviour
     {
         if (EnemyTracker.Instance != null)
             EnemyTracker.Instance.UnregisterEnemy();
+        currency.UpdateValue(value);
+        onDestroyed.Invoke();
     }
 
     void Update()
     {
         if (agent != null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && !attacking)
         {
-            Debug.Log("Load cannon");
             enemyAttacking.Attack();
             attacking = true;
         }

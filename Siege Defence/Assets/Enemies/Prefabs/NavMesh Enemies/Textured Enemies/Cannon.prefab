@@ -265,7 +265,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68634298d9bdb0743850298ca8354b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavMesh
-  attacking: 0
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 87f88034f234dac42bd78c5b796e0af8, type: 2}
+        m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
+        m_MethodName: RaiseAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  currency: {fileID: 11400000, guid: 209f3c4170e1b2749a889059f23bf81d, type: 2}
+  value: 25
+  attacking: 1
 --- !u!195 &-6052336424088963808
 NavMeshAgent:
   m_ObjectHideFlags: 0

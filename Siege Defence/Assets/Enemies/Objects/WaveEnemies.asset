@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bbbb16bea1759478a3b3e8c83479f4, type: 3}
   m_Name: WaveEnemies
   m_EditorClassIdentifier: Assembly-CSharp::IntData
-  value: 16
+  value: 14
   minValue: 0
-  maxValue: 0
+  maxValue: 999
   valueOutOfRange:
     m_PersistentCalls:
       m_Calls: []

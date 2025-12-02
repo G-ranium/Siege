@@ -34,7 +34,7 @@ public class TextMeshProBehaviour : MonoBehaviour
         if (gameActionObj != null) gameActionObj.RaiseNoArgs += Raise;
     }
 
-    private void Raise() => raiseEvent.Invoke();
+    public void Raise() => raiseEvent.Invoke();
     public void UpdateText(IntData intDataObj) => textObj.text = intDataObj.Value.ToString();
 
     public void UpdateText(string obj) => textObj.text = obj;
