@@ -51,7 +51,7 @@ public class TitleSceneManager : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
