@@ -1,9 +1,10 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class NewTowerBehavior : MonoBehaviour, IDamageable
 {
     public TowerData towerData;
+    public UnityEvent onDeath;
 
     private HealthBarBehavior towerHealthbar;
     private float currentHealth;
@@ -102,6 +103,7 @@ public class NewTowerBehavior : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        onDeath.Invoke();
         // play death FX here
         Destroy(gameObject);
     }
