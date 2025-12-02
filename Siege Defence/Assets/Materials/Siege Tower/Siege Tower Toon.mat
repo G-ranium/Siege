@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Grass Toon Mat
+  m_Name: Siege Tower Toon
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -128,7 +128,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6a42908a65ac5a9439c1940b4e943d5b, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca9ed830711a56844bdbbd84d6759eea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -144,7 +144,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: c834ebee3d774e24282ff464948a6c18, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45848d13e8f91f4489f907fcaca95802, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapForMatCap:
@@ -237,11 +237,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _1st2nd_Shades_Feather: 0.217
-    - _1st_ShadeColor_Feather: 0.08
+    - _1st2nd_Shades_Feather: 0.48
+    - _1st_ShadeColor_Feather: 0.213
     - _1st_ShadeColor_Step: 0.677
-    - _2nd_ShadeColor_Feather: 0.217
-    - _2nd_ShadeColor_Step: 0.449
+    - _2nd_ShadeColor_Feather: 0.48
+    - _2nd_ShadeColor_Step: 0.352
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ARSampler_AlphaOn: 0
@@ -272,7 +272,7 @@ Material:
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
     - _BaseColor_Step: 0.677
-    - _BaseShade_Feather: 0.08
+    - _BaseShade_Feather: 0.213
     - _Base_Speed: 0
     - _Blend: 0
     - _BlendMode: 0
@@ -405,7 +405,7 @@ Material:
     - _Offset_Z: 0
     - _OutlineOverridden: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 15
+    - _Outline_Width: 5
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -433,7 +433,7 @@ Material:
     - _SecondShadeOverridden: 0
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0.449
+    - _ShadeColor_Step: 0.352
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -486,7 +486,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_ShadingGradeMapLevel: 0
-    - _Tweak_SystemShadowsLevel: -0.092
+    - _Tweak_SystemShadowsLevel: 0.068
     - _Tweak_transparency: 0
     - _UVBase: 0
     - _UVDetail: 0

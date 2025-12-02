@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackingNavMesh
   attackSpeed: 1
-  anim: {fileID: 0}
-  fireAnim: Fire
+  anim: {fileID: 7007302746844804367}
+  fireAnim: Idle
+  fireEffect: {fileID: 0}
 --- !u!1 &6334425950785580548
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,8 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175f75fcd455ea8469fd40d73c03a7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCenterNavMesh
-  range: 3
+  range: 2
   baseName: BaseV2
+  anim: {fileID: 7007302746844804367}
+  moveAnim: Idle
+  idleAnim: Idle
   defaultTarget: {fileID: 0}
   currentTarget: {fileID: 0}
 --- !u!114 &-2225904296220651585
@@ -298,7 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackingNavMesh
   attackSpeed: 5
   anim: {fileID: 7007302746844804367}
-  fireAnim: Fire
+  fireAnim: Idle
+  fireEffect: {fileID: 0}
 --- !u!1001 &6270533981776647057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5199798043515374836}
     m_Modifications:
+    - target: {fileID: 999492066242623532, guid: d6631da54ec45ba4aa0116232b77918d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3738392025415875606, guid: d6631da54ec45ba4aa0116232b77918d, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -125,12 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ced030f5b73e1545b8155f20b1ac428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  damage: 10
+  damage: 5
   moving: 0
   owner: {fileID: 0}
-  anim: {fileID: 0}
-  fireAnim: 
-  reloadAnim: 
 --- !u!1001 &7831957925453754666
 PrefabInstance:
   m_ObjectHideFlags: 0
