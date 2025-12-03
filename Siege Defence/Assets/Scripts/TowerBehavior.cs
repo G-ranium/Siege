@@ -96,7 +96,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         if (!enemiesInRange.Contains(currentTarget))
         {
             currentTarget = enemiesInRange.Count > 0 ? enemiesInRange[0] : null;
-            Debug.Log($"{gameObject.name}: Targeting to {currentTarget}");
+            //Debug.Log($"{gameObject.name}: Targeting to {currentTarget}");
         }
     }
 
@@ -107,7 +107,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
             if (!enemiesInRange.Contains(other.gameObject))
             {
                 enemiesInRange.Add(other.gameObject);
-                Debug.Log($"{other.name} entered range of {towerData.towerName}");
+                //Debug.Log($"{other.name} entered range of {towerData.towerName}");
             }
         }
     }
@@ -118,7 +118,7 @@ public class TowerBehavior : MonoBehaviour, IDamageable
         {
             if (enemiesInRange.Contains(other.gameObject))
             {
-                Debug.Log($"{other.name} exited range of {towerData.towerName}");
+                //Debug.Log($"{other.name} exited range of {towerData.towerName}");
                 enemiesInRange.Remove(other.gameObject);
 
                 // If it was the current target, reset targeting

@@ -8,7 +8,7 @@ public class MouseClickInstantiator : MonoBehaviour
     public LayerMask groundLayer;
     public Material ghostMaterial; // Material for transparent ghost
 
-    private Camera mainCamera;
+    [SerializeField]private Camera mainCamera;
     private GameObject prefabToInstantiate;
     private GameObject ghostInstance;
 
@@ -20,7 +20,8 @@ public class MouseClickInstantiator : MonoBehaviour
 
     private void Awake()
     {
-        mainCamera = Camera.main;
+        if(mainCamera == null)
+            mainCamera = Camera.main;
 
         // Create actions
         clickAction = new InputAction("Click", binding: "<Mouse>/leftButton");
