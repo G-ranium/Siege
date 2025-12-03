@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505e918160aa07e4e8661ff0fd5f1ca1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505e918160aa07e4e8661ff0fd5f1ca1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505e918160aa07e4e8661ff0fd5f1ca1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505e918160aa07e4e8661ff0fd5f1ca1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -342,6 +342,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewTowerBehavior
   towerData: {fileID: 11400000, guid: 1c75d374dc99e064db6646b61ddc1d1f, type: 2}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &7822401511900775974
 BoxCollider:
   m_ObjectHideFlags: 0
