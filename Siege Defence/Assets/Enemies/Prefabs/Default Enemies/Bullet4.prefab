@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ced030f5b73e1545b8155f20b1ac428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  speed: 6
-  damage: 10
+  damage: 15
+  moving: 0
   owner: {fileID: 0}
