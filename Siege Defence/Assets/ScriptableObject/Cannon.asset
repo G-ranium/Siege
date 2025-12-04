@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Cannon
   level: 1
-  health: 100
-  maxHealth: 100
-  fireRate: 0.8
-  damage: 70
-  range: 4
+  health: 150
+  maxHealth: 150
+  fireRate: 0.5
+  damage: 100
+  range: 6
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

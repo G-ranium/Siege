@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26bc30bfec18654ca57666c10ee476f, type: 3}
   m_Name: Castle
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
-  towerName: Cannon Tower
+  towerName: Castle
   level: 1
   health: 1000
   maxHealth: 1000
