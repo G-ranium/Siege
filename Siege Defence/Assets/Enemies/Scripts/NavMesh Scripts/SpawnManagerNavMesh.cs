@@ -1,40 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class SpawnManagerNavMesh : MonoBehaviour
 {
+    public enum SpawnDirection { North, East, South, West }
+    public SpawnDirection spawnDirection = SpawnDirection.North;
     public GameObject[] objectPrefabs;
     public IntData numberOfEnemiesToSpawn;
     public float spawnDelay = 2;
     public float spawnInterval = 1;
     public float radius = 15.0f;
+
     private Vector3 centerPoint;
-
-
-    public enum SpawnDirection { North, East, South, West }
-    public SpawnDirection spawnDirection = SpawnDirection.North;
-
-    //public int numberOfEnemiesToSpawn = 10;
+    private GameObject spawner;
     private int enemiesSpawned = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        int startingSpawn = 10;
         centerPoint = new Vector3(0, 1, 0);
-        //Debug.Log(numberOfEnemiesToSpawn.Value);
-        //numberOfEnemiesToSpawn.SetValue(10);
-        //Debug.Log("Value should be 10! " + numberOfEnemiesToSpawn.Value);
         RandomizeSpawnDirection();
+        numberOfEnemiesToSpawn.SetValue(startingSpawn);
     }
 
     // Spawn obstacles
     public void SpawnObjects()
     {
         if (enemiesSpawned >= numberOfEnemiesToSpawn.Value) return;
-
-        Debug.Log("Spawning " + numberOfEnemiesToSpawn.Value + " enemies!");
 
         Vector3 rawSpawnLocation = RandomPointInQuadrant();
         Vector3 spawnLocation = GetNearestNavMeshPoint(rawSpawnLocation);
@@ -53,7 +49,6 @@ public class SpawnManagerNavMesh : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No NavMesh found near spawn point. Using original position.");
             return position;
         }
     }
@@ -69,12 +64,8 @@ public class SpawnManagerNavMesh : MonoBehaviour
 
     public void UpdateNextWave()
     {
-        //enemiesSpawned = 0;
-        Debug.Log("Before change " + numberOfEnemiesToSpawn.Value);
         double nextWave = numberOfEnemiesToSpawn.Value * 0.2;
         numberOfEnemiesToSpawn.UpdateValue((int)nextWave);
-        //numberOfEnemiesToSpawn.IncrementValue();
-        Debug.Log("Value should be changed now! " + numberOfEnemiesToSpawn.Value);
         RandomizeSpawnDirection();
     }
 

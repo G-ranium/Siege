@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
@@ -33,7 +34,9 @@ public class IntData : ScriptableObject
     
     public void SetValue(int data)
     {
+        Debug.Log("Recieving: " + data);
         Value = data;
+        Debug.Log("Value is now: " + value);
     }
     
     public void IncrementValue()
