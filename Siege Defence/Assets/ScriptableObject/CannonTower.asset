@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Cannon Tower
   level: 1
-  health: 100
-  fireRate: 0.2
-  damage: 40
-  range: 3
+  health: 350
+  maxHealth: 350
+  fireRate: 0.25
+  damage: 150
+  range: 7
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64

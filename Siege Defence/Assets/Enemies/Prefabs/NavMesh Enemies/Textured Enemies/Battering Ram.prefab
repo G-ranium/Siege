@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e132cc3db432942b00e18c273c147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 500
+  maxHealth: 300
 --- !u!114 &9151027669144167684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f402b8257007e4f498982401b4b636aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackingNavMesh
-  attackSpeed: 5
+  attackSpeed: 1
   anim: {fileID: 7007302746844804367}
   fireAnim: Fire
   fireEffect: {fileID: 0}

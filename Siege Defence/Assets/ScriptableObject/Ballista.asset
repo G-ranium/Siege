@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Ballista
   level: 1
-  health: 150
-  maxHealth: 150
+  health: 100
+  maxHealth: 100
   fireRate: 0.5
-  damage: 20
-  range: 6
+  damage: 60
+  range: 4
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

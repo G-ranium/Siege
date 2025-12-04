@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e132cc3db432942b00e18c273c147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 200
+  maxHealth: 100
 --- !u!114 &9151027669144167684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   currency: {fileID: 11400000, guid: 209f3c4170e1b2749a889059f23bf81d, type: 2}
-  value: 15
+  value: 5
   attacking: 0
 --- !u!195 &-6052336424088963808
 NavMeshAgent:
