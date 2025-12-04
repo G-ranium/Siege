@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCenterNavMesh
   range: 15
-  baseName: BaseV2
+  baseName: Castle
   anim: {fileID: 1203349763260937184}
   moveAnim: Move Forward
   idleAnim: Idle
