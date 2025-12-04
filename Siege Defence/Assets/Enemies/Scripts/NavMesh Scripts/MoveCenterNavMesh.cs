@@ -76,7 +76,7 @@ public class MoveCenterNavMesh : MonoBehaviour
     {
         currentTarget = other.transform;
         PlayMoveAnim();
-        Debug.Log("Found Hostile!");
+        //Debug.Log("Found Hostile!");
     }
 
     //-------------------------------
