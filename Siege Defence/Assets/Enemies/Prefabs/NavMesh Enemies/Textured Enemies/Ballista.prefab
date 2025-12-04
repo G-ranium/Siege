@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet3
       objectReference: {fileID: 0}
+    - target: {fileID: 6758400495021778937, guid: 6544bca42b9daf940a87994f174ff240, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7331539762723824514, guid: 6544bca42b9daf940a87994f174ff240, type: 3}
       propertyPath: anim
       value: 

@@ -35,6 +35,7 @@ public class EnemyNavMesh : MonoBehaviour
     {
         if (agent != null && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance && !attacking)
         {
+            //Debug.Log("Load cannon");
             enemyAttacking.Attack();
             attacking = true;
         }
